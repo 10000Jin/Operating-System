@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1140</width>
+    <height>769</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>16777215</width>
+    <height>16777215</height>
+   </size>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>10</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>10</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <weight>50</weight>
+    <bold>false</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>OS_Process_Scheduling</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="1">
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetDefaultConstraint</enum>
+      </property>
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="2" column="7">
+       <widget class="QLineEdit" name="Set_sleep_time">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>0.2</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="7">
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="2" column="6">
+       <widget class="QLabel" name="label_12">
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>9</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>간격(sec):</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="3" rowspan="6" colspan="5">
+       <widget class="QTableWidget" name="show_progress">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>3</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" colspan="6">
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>28</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Process Scheduling Simulation</string>
+        </property>
+       </widget>
+      </item>
+      <item row="16" column="3" rowspan="4" colspan="5">
+       <widget class="QTableWidget" name="show_result">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <column>
+         <property name="text">
+          <string>이름</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignVCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>AT</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignVCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>BT</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignVCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>WT</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignVCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>TT</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignVCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>NTT</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignVCenter</set>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item row="19" column="0">
+       <widget class="QPushButton" name="stop">
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>22</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>초기화</string>
+        </property>
+       </widget>
+      </item>
+      <item row="9" column="3">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="17" column="1" colspan="2">
+       <widget class="QLineEdit" name="set_processor_num">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>1</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="14" column="3" colspan="5">
+       <widget class="QLabel" name="label_7">
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>프로세스 결과</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="3">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="18" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>퀀텀</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="3" colspan="5">
+       <widget class="QTableWidget" name="show_ready_queue">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>1</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item row="19" column="1" colspan="2">
+       <widget class="QPushButton" name="run">
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>21</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>실행</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="3" colspan="5">
+       <widget class="QLabel" name="label_10">
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Ready-Queue</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="18" column="1" colspan="2">
+       <widget class="QLineEdit" name="set_quantum">
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <pointsize>11</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>1</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="4" colspan="2">
+       <widget class="QLabel" name="label_11">
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>                         프로세스 진행</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0" rowspan="10" colspan="3">
+       <widget class="QTableWidget" name="show_process_info">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>1</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="sizeIncrement">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="baseSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Arial</family>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="lineWidth">
+         <number>0</number>
+        </property>
+        <property name="midLineWidth">
+         <number>0</number>
+        </property>
+        <column>
+         <property name="text">
+          <string>이름</string>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignVCenter</set>
+         </property>
+         <property name="background">
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>AT</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignVCenter</set>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>BT</string>
+         </property>
+         <property name="textAlignment">
+          <set>AlignLeading|AlignVCenter</set>
+         </property>
+        </column>
+       </widget>
+      </item>
+      <item row="17" column="0">
+       <widget class="QLabel" name="label_5">
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>12</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>프로세서 수</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" rowspan="3" colspan="3">
+       <layout class="QGridLayout" name="gridLayout_3" columnstretch="0,0">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="select_method">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>13</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <item>
+           <property name="text">
+            <string>FCFS</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>RR</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SPN</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>SRTN</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>HRRN</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>LC_RR</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>LS_SPN</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>20</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>AT </string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="buddy">
+           <cstring>label_4</cstring>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <family>HY헤드라인M</family>
+            <pointsize>16</pointsize>
+            <weight>50</weight>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>스케줄링 기법</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLineEdit" name="set_AT">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>13</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_6">
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>19</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>BT </string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="set_BT">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <pointsize>13</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="6" column="0" colspan="3">
+       <widget class="QPushButton" name="add_info">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>HY헤드라인M</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>프로세스 추가</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1140</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <tabstops>
+  <tabstop>set_AT</tabstop>
+  <tabstop>set_BT</tabstop>
+  <tabstop>add_info</tabstop>
+  <tabstop>set_processor_num</tabstop>
+  <tabstop>set_quantum</tabstop>
+  <tabstop>Set_sleep_time</tabstop>
+  <tabstop>select_method</tabstop>
+  <tabstop>stop</tabstop>
+  <tabstop>run</tabstop>
+  <tabstop>show_result</tabstop>
+  <tabstop>show_process_info</tabstop>
+  <tabstop>show_ready_queue</tabstop>
+  <tabstop>show_progress</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+ <slots>
+  <slot>start()</slot>
+  <slot>stop()</slot>
+  <slot>set_info()</slot>
+ </slots>
+</ui>
